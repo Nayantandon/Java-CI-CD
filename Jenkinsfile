@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-                DOCKER_IMAGE = "nayandockerrepos/jenkinspipeline:${BUILD_NUMBER}"
+                DOCKER_IMAGE = "nayandockerrepos/javacicd:${BUILD_NUMBER}"
             }
     stages {
         stage('Clean Reports') {
@@ -21,9 +21,10 @@ pipeline {
               //   sh 'pip install requests'
                  //sh 'pip install --use-pep517 xmlrunner'
                 // sh 'pip install --use-pep517 Flask'
-                 sh 'pyinstaller --onefile app.py'
+                 //sh 'pyinstaller --onefile app.py'
                 // sh 'cd /home/nayan4placed2021/env/env/bin'
                 // sh 'python app.py'
+                mvn clean package
                 echo '********* Build Stage Finished **********'
             }
         }
