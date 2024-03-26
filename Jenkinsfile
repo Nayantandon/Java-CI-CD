@@ -28,7 +28,7 @@ pipeline {
                  //sh 'pyinstaller --onefile app.py'
                 // sh 'cd /home/nayan4placed2021/env/env/bin'
                 // sh 'python app.py'
-                mvn clean package
+                sh 'mvn clean package'
                 echo '********* Build Stage Finished **********'
             }
         }
