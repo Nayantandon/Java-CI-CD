@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        jdk 'jdk17'
+        maven 'maven3'
     environment {
                 DOCKER_IMAGE = "nayandockerrepos/javacicd:${BUILD_NUMBER}"
             }
